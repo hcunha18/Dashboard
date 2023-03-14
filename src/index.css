@@ -1,0 +1,23 @@
+:root {
+  --white: #fff;
+  --background-gray: #27292f;
+  --blue-200: #1e90ff;
+  --blue-500: #4169e1;
+}
+
+body,
+input,
+textarea,
+h1,
+h2,
+p,
+button {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
