@@ -27,14 +27,25 @@ const AtivoCanceladoFem = [
   },
 ];
 
-const AlunosAcimaeAbaixodaMediaHoras = [
+const AlunosAtivosAcimaeAbaixodaMediaHoras = [
   {
     name: "Acima",
-    value: 28,
+    value: 27,
   },
   {
     name: "Abaixo",
-    value: 43,
+    value: 8,
+  },
+];
+
+const AlunosCanceladoAcimaeAbaixodaMediaHoras = [
+  {
+    name: "Acima",
+    value: 2,
+  },
+  {
+    name: "Abaixo",
+    value: 34,
   },
 ];
 
@@ -51,7 +62,7 @@ const AtivoCanceladoMasc = [
 ];
 
 const AtivoSemestreSemDisciplinas = [
-  { name: "0", value: 27 },
+  { name: "0", value: 28 },
   { name: "1", value: 0 },
   { name: "2", value: 5 },
   { name: "3", value: 2 },
@@ -59,7 +70,7 @@ const AtivoSemestreSemDisciplinas = [
 ];
 
 const data = [
-  { name: "ESPONTÂNEA", value: 19 },
+  { name: "ESPONTÂNEA", value: 20 },
   { name: "NOVO CADASTRO", value: 7 },
   { name: "ABANDONO", value: 8 },
   { name: "DESISTÊNCIA", value: 1 },
@@ -222,7 +233,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            Relação De Alunos Ativos e Cancelados Acima e Abaixo da Média Total
+            Relação Ativo Cancelado Feminino
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -235,7 +246,7 @@ export default function Presentation() {
                 height: { xs: 300, sm: 350, md: 430 },
               }}
             >
-              <PieGraph content={AlunosAcimaeAbaixodaMediaHoras} />
+              <PieGraph content={AtivoCanceladoFem} />
             </Stack>
             <div className="text">
               <h2>EXPLICAÇÃO</h2>
@@ -260,7 +271,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            Relação Ativo Cancelado Feminino
+            Cancelados Acima e Abaixo da Media Global
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -273,7 +284,45 @@ export default function Presentation() {
                 height: { xs: 300, sm: 350, md: 430 },
               }}
             >
-              <PieGraph content={AtivoCanceladoFem} />
+              <PieGraph content={AlunosCanceladoAcimaeAbaixodaMediaHoras} />
+            </Stack>
+            <div className="text">
+              <h2>EXPLICAÇÃO</h2>
+              <p>
+                O Motivo de trancamento se divide em quatro categorias:
+                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
+                e Abandono.
+              </p>
+            </div>
+          </Stack>
+        </div>
+        <div className="contentGraph">
+          <Typography
+            sx={{
+              textAlign: "center",
+              marginTop: 10,
+              fontFamily: "inter",
+              marginBottom: 10,
+              fontSize: "25px",
+              lineHeight: "90%",
+              maxWidth: "23rem",
+              fontWeight: 500,
+            }}
+          >
+            Ativos Acima e Abaixo da Media Global
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
+          >
+            <Stack
+              sx={{
+                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                height: { xs: 300, sm: 350, md: 430 },
+              }}
+            >
+              <PieGraph content={AlunosAtivosAcimaeAbaixodaMediaHoras} />
             </Stack>
             <div className="text">
               <h2>EXPLICAÇÃO</h2>
