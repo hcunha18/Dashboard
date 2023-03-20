@@ -1,94 +1,9 @@
 import "./index.css";
 import { NavBar } from "../../components/NavBar";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  CartesianGrid,
-  ResponsiveContainer,
-  Cell,
-  PieChart,
-  Pie,
-  Sector,
-} from "recharts";
 import React, { useCallback, useState } from "react";
 import { Container, Divider, Stack, Typography } from "@mui/material";
-
-const renderActiveShape = (props) => {
-  const RADIAN = Math.PI / 180;
-  const {
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    startAngle,
-    endAngle,
-    fill,
-    payload,
-    percent,
-    value,
-  } = props;
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-  const ey = my;
-  const textAnchor = cos >= 0 ? "start" : "end";
-
-  return (
-    <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-        {payload.name}
-      </text>
-      <Sector
-        cx={cx}
-        cy={cy}
-        innerRadius={innerRadius}
-        outerRadius={outerRadius}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        fill={fill}
-      />
-      <Sector
-        cx={cx}
-        cy={cy}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        innerRadius={outerRadius + 6}
-        outerRadius={outerRadius + 10}
-        fill={fill}
-      />
-      <path
-        d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke={fill}
-        fill="none"
-      />
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        textAnchor={textAnchor}
-        fill="#333"
-      >{`PV ${value}`}</text>
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        dy={18}
-        textAnchor={textAnchor}
-        fill="#999"
-      >
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
-      </text>
-    </g>
-  );
-};
+import { PieGraph } from "../../components/PieGraph";
+import { BarGraph } from "../../components/BarGraph";
 
 const dataEscola = [
   {
@@ -100,16 +15,47 @@ const dataEscola = [
     value: 11,
   },
 ];
-
-const dataSexo = [
+// ATIVO/CANCELADO FEMINO
+const AtivoCanceladoFem = [
   {
-    name: "F",
+    name: "Ativo",
+    value: 7,
+  },
+  {
+    name: "Cancelado",
     value: 10,
   },
+];
+
+const AlunosAcimaeAbaixodaMediaHoras = [
   {
-    name: "M",
+    name: "Acima",
+    value: 28,
+  },
+  {
+    name: "Abaixo",
+    value: 43,
+  },
+];
+
+// ATIVO/CANCELADO MASCULINO
+const AtivoCanceladoMasc = [
+  {
+    name: "Ativo",
+    value: 29,
+  },
+  {
+    name: "Cancelado",
     value: 26,
   },
+];
+
+const AtivoSemestreSemDisciplinas = [
+  { name: "0", value: 27 },
+  { name: "1", value: 0 },
+  { name: "2", value: 5 },
+  { name: "3", value: 2 },
+  { name: "4", value: 1 },
 ];
 
 const data = [
@@ -120,19 +66,6 @@ const data = [
 ];
 
 export default function Presentation() {
-  const dataManipulado = data.map((dado, index) => {
-    if (index % 2 == 0) {
-      return { ...dado, color: "var(--blue-200)" };
-    }
-    return { ...dado, color: "var(--blue-500)" };
-  });
-  const [activeIndex, setActiveIndex] = useState(0);
-  const onPieEnter = useCallback(
-    (_, index) => {
-      setActiveIndex(index);
-    },
-    [setActiveIndex]
-  );
   // xs extrapequeno sm small pequeno md medium lg large xl extra large
   return (
     <div className="container">
@@ -174,6 +107,43 @@ export default function Presentation() {
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
+            }}
+          >
+            Quantidade de Semestre Sem disciplinas dos alunos ativos
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
+          >
+            <Stack
+              sx={{
+                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                height: { xs: 250, sm: 300, md: 400 },
+              }}
+            >
+              <BarGraph content={AtivoSemestreSemDisciplinas} />
+            </Stack>
+            <div className="text">
+              <h2>EXPLICAÇÃO</h2>
+              <p>
+                O Motivo de trancamento se divide em quatro categorias:
+                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
+                e Abandono.
+              </p>
+            </div>
+          </Stack>
+        </div>
+        <div className="contentGraph">
+          <Typography
+            sx={{
+              fontFamily: "inter",
+              marginBottom: 10,
+              fontSize: "25px",
+              lineHeight: "90%",
+              maxWidth: "23rem",
+              fontWeight: 500,
             }}
           >
             Motivo Trancamento
@@ -189,28 +159,121 @@ export default function Presentation() {
                 height: { xs: 250, sm: 300, md: 400 },
               }}
             >
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  className="barChart"
-                  width={500}
-                  height={300}
-                  data={data}
-                >
-                  <XAxis dataKey="name" stroke="var(--white)" fontSize={10} />
-                  <YAxis stroke="var(--white)" />
-                  <Tooltip
-                    wrapperStyle={{
-                      width: 100,
-                      backgroundColor: "var(--background-gray)",
-                    }}
-                  />
-                  <Bar dataKey="value" barSize={25}>
-                    {dataManipulado.map((entry, index) => (
-                      <Cell fill={entry.color} key={`cell-${index}`} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+              <BarGraph content={data} />
+            </Stack>
+            <div className="text">
+              <h2>EXPLICAÇÃO</h2>
+              <p>
+                O Motivo de trancamento se divide em quatro categorias:
+                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
+                e Abandono.
+              </p>
+            </div>
+          </Stack>
+        </div>
+        <div className="contentGraph">
+          <Typography
+            sx={{
+              textAlign: "center",
+              marginTop: 10,
+              fontFamily: "inter",
+              marginBottom: 10,
+              fontSize: "25px",
+              lineHeight: "90%",
+              maxWidth: "23rem",
+              fontWeight: 500,
+            }}
+          >
+            Relação Ativo Cancelado Masculino
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
+          >
+            <Stack
+              sx={{
+                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                height: { xs: 300, sm: 350, md: 430 },
+              }}
+            >
+              <PieGraph content={AtivoCanceladoMasc} />
+            </Stack>
+            <div className="text">
+              <h2>EXPLICAÇÃO</h2>
+              <p>
+                O Motivo de trancamento se divide em quatro categorias:
+                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
+                e Abandono.
+              </p>
+            </div>
+          </Stack>
+        </div>
+        <div className="contentGraph">
+          <Typography
+            sx={{
+              textAlign: "center",
+              marginTop: 10,
+              fontFamily: "inter",
+              marginBottom: 10,
+              fontSize: "25px",
+              lineHeight: "90%",
+              maxWidth: "23rem",
+              fontWeight: 500,
+            }}
+          >
+            Relação De Alunos Ativos e Cancelados Acima e Abaixo da Média Total
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
+          >
+            <Stack
+              sx={{
+                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                height: { xs: 300, sm: 350, md: 430 },
+              }}
+            >
+              <PieGraph content={AlunosAcimaeAbaixodaMediaHoras} />
+            </Stack>
+            <div className="text">
+              <h2>EXPLICAÇÃO</h2>
+              <p>
+                O Motivo de trancamento se divide em quatro categorias:
+                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
+                e Abandono.
+              </p>
+            </div>
+          </Stack>
+        </div>
+        <div className="contentGraph">
+          <Typography
+            sx={{
+              textAlign: "center",
+              marginTop: 10,
+              fontFamily: "inter",
+              marginBottom: 10,
+              fontSize: "25px",
+              lineHeight: "90%",
+              maxWidth: "23rem",
+              fontWeight: 500,
+            }}
+          >
+            Relação Ativo Cancelado Feminino
+          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
+          >
+            <Stack
+              sx={{
+                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                height: { xs: 300, sm: 350, md: 430 },
+              }}
+            >
+              <PieGraph content={AtivoCanceladoFem} />
             </Stack>
             <div className="text">
               <h2>EXPLICAÇÃO</h2>
@@ -234,79 +297,20 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            Gênero
+            Escolaridade
           </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={10}>
-            <Stack
-              sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
-              }}
-            >
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart width={400} height={400}>
-                  <Pie
-                    activeIndex={activeIndex}
-                    activeShape={renderActiveShape}
-                    data={dataSexo}
-                    cx={200}
-                    cy={200}
-                    innerRadius={60}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                    onMouseEnter={onPieEnter}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-            </Stack>
-            <div className="text">
-              <h2>EXPLICAÇÃO</h2>
-              <p>
-                O Motivo de trancamento se divide em quatro categorias:
-                Solicitação Espontânea, Efetivação de Novo Cadastro, Desistência
-                e Abandono.
-              </p>
-            </div>
-          </Stack>
-        </div>
-        <div className="contentGraph">
-          <Typography
-            sx={{
-              marginTop: 10,
-              fontFamily: "inter",
-              marginBottom: 10,
-              fontSize: "25px",
-              lineHeight: "90%",
-              maxWidth: "23rem",
-              fontWeight: 500,
-            }}
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={10}
+            divider={<Divider orientation="vertical" flexItem color={"#FFF"} />}
           >
-            Gênero
-          </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={10}>
             <Stack
               sx={{
                 width: { xs: 330, sm: 400, md: 470, lg: 570 },
                 height: { xs: 300, sm: 350, md: 430 },
               }}
             >
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart width={400} height={400}>
-                  <Pie
-                    activeIndex={activeIndex}
-                    activeShape={renderActiveShape}
-                    data={dataEscola}
-                    cx={200}
-                    cy={200}
-                    innerRadius={60}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                    onMouseEnter={onPieEnter}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+              <PieGraph content={dataEscola} />
             </Stack>
             <div className="text">
               <h2>EXPLICAÇÃO</h2>
