@@ -61,6 +61,13 @@ const AtivoCanceladoMasc = [
   },
 ];
 
+const CanceladoSemestreSemDisciplinas = [
+  { name: "0", value: 20 },
+  { name: "1", value: 12 },
+  { name: "2", value: 3 },
+  { name: "3", value: 1 },
+];
+
 const AtivoSemestreSemDisciplinas = [
   { name: "0", value: 28 },
   { name: "1", value: 0 },
@@ -70,9 +77,9 @@ const AtivoSemestreSemDisciplinas = [
 ];
 
 const data = [
-  { name: "ESPONTÂNEA", value: 20 },
+  { name: "ESPONTÂNEA", value: 19 },
   { name: "NOVO CADASTRO", value: 7 },
-  { name: "ABANDONO", value: 8 },
+  { name: "ABANDONO", value: 9 },
   { name: "DESISTÊNCIA", value: 1 },
 ];
 
@@ -121,7 +128,7 @@ export default function Presentation() {
               textAlign: "center",
             }}
           >
-            Quantidade de Semestre Sem disciplinas dos alunos ativos
+            Quantidade de Semestre Sem disciplinas dos alunos cancelados
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -134,7 +141,7 @@ export default function Presentation() {
                 height: { xs: 250, sm: 300, md: 400 },
               }}
             >
-              <BarGraph content={AtivoSemestreSemDisciplinas} />
+              <BarGraph content={CanceladoSemestreSemDisciplinas} />
             </Stack>
             <div className="text">
               <h2>EXPLICAÇÃO</h2>
@@ -149,6 +156,7 @@ export default function Presentation() {
         <div className="contentGraph">
           <Typography
             sx={{
+              marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
               fontSize: "25px",
@@ -271,7 +279,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            Cancelados Acima e Abaixo da Media Global
+            Cancelados Acima e Abaixo da Media Global de Horas Obrigatorias
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -309,7 +317,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            Ativos Acima e Abaixo da Media Global
+            Ativos Acima e Abaixo da Media Global de Horas Obrigatorias
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
