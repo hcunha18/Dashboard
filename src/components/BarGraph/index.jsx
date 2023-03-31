@@ -26,7 +26,7 @@ export function BarGraph(props) {
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
         className="barChart"
-        width={500}
+        width={400}
         height={300}
         data={props.content}
       >

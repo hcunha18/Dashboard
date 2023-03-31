@@ -193,9 +193,17 @@ export default function Presentation() {
           criada algumas correlações entre os dados apresentados, tais como as
           representadas abaixo:
         </Typography>
-        <div className="contentGraph">
+        {/* Semestres realizados */}
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
+              marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
               fontSize: "25px",
@@ -214,14 +222,17 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={TotalDeSemestreAlunonoCurso} />
             </Stack>
-            <div className="text">
-              <h2>Gráfico Quantidade de Semestres x Quantidade de alunos</h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+                Gráfico Quantidade de Semestres x Quantidade de alunos
+              </Typography>
               <Typography
                 sx={{
                   fontSize: "15px",
@@ -243,10 +254,17 @@ export default function Presentation() {
                 adaptação dos alunos aprovados, a aprovação em outras
                 universidades como também o grande déficit de aprendizado.
               </Typography>
-            </div>
+            </Stack>
           </Stack>
-        </div>
-        <div className="contentGraph">
+        </Stack>
+        {/* Quantidade de semestre sem disciplinas dos alunos cancelados */}
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -268,15 +286,23 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={CanceladoSemestreSemDisciplinas} />
             </Stack>
-            <div className="text">
-              <h2>Quantidade de alunos(Y) X Quantidade de Semestres(X)</h2>
-              <p>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+                Quantidade de alunos(Y) X Quantidade de Semestres(X)
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 O gráfico ao lado mostra a relação da quantidade de semestres
                 que o aluno cancelado teve matriculado no curso, porém sem
                 nenhuma disciplina. <br />
@@ -284,12 +310,18 @@ export default function Presentation() {
                 <br />O gráfico ao lado ilustra que os alunos que cancelaram a
                 matrícula, não costumam ter semestres sem disciplinas
                 majoritariamente, cancelam logo após o último período cursado.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Motivo trancamento */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -310,15 +342,23 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={data} />
             </Stack>
-            <div className="text">
-              <h2>Quantidade de alunos(Y) X Motivo de trancamento(X)</h2>
-              <p>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+                Quantidade de alunos(Y) X Motivo de trancamento(X)
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Com este gráfico é possível relatar todos os motivos de
                 cancelamento registrado no sistema da universidade, sendo eles:{" "}
                 <br />
@@ -341,12 +381,18 @@ export default function Presentation() {
                 cancelamento é para mudar de curso na mesma instituição, ou
                 seja, pode não haver a identificação com o curso e o aluno
                 procurar por outra área.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Cancelamento X Reprovação por nota */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -367,29 +413,47 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={RepPorNota} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de alunos cancelados(Y) X Quantidade de reprovação
                 por nota(X)
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Com o gráfico ao lado conseguimos ilustrar que o maior número de
                 reprovação por nota é 0 e o segundo maior é 8 que corresponde a
                 quantidade de disciplinas no primeiro período no caso de
                 computação. Podemos relacionar essa quantidade de reprovação com
                 a desistência após o primeiro contato com o curso.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Cancelamento X Reprovação por falta */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -401,7 +465,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            cancelado x quantidade de reprovação por falta
+            Cancelado x Quantidade de reprovação por falta
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -410,27 +474,45 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={RepPorFalta} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de alunos cancelados(Y) X Quantidade de reprovação
                 por falta(X)
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Neste gráfico ocorre a mesma situação do gráfico anterior, ou
                 seja, o maior número de reprovação por nota é 0 e a próxima
                 quantidade de reprovação é 8.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Cancelamento X Aprovação */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -442,7 +524,7 @@ export default function Presentation() {
               fontWeight: 500,
             }}
           >
-            cancelado x quantidade de Aprovação
+            Cancelado x Quantidade de Aprovação
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -451,17 +533,29 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
                 height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <BarGraph content={Aprovacao} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de alunos cancelados(Y) X Quantidade Aprovação(X)
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 O gráfico ao lado ilustra a quantidade de aprovação entre os
                 alunos cancelados.
                 <br />O maior número de aprovação dos cancelados reside em 0, ou
@@ -470,15 +564,20 @@ export default function Presentation() {
                 Podemos relacionar este número de aprovação baixa, a dificuldade
                 inicial do aluno que ingressa no curso de Engenharia de
                 Computação no CEFET/MG Campus Leopoldina.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Quantidade de alunos Ativos X Quantidade de alunos Cancelados do sexo Masculino */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
-              textAlign: "center",
               marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
@@ -497,18 +596,30 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph content={AtivoCanceladoMasc} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de alunos Ativos X Quantidade de alunos Cancelados do
                 sexo Masculino
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 No gráfico ao lado, exibimos a relação quantitativa de alunos
                 ainda no curso (Ativo) e a quantidade de alunos que já não estão
                 mais no curso (Cancelados), ambos os dados quantitativos
@@ -516,16 +627,21 @@ export default function Presentation() {
                 <br />
                 Percebemos que a quantidade de alunos ativos é maior que a
                 quantidade de alunos cancelados.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Quantidade de alunos Ativos X Quantidade de alunos Cancelados do
                 sexo Feminino */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
-              textAlign: "center",
               marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
@@ -544,18 +660,30 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph content={AtivoCanceladoFem} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de alunos Ativos X Quantidade de alunos Cancelados do
                 sexo Feminino
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 No gráfico ao lado, exibimos a relação quantitativa de alunos
                 ainda no curso (Ativo) e a quantidade de alunos que já não estão
                 mais no curso (Cancelados), ambos os dados quantitativos
@@ -563,15 +691,20 @@ export default function Presentation() {
                 <br />
                 Percebemos que a quantidade de alunos cancelados é maior que a
                 quantidade de alunos ativos.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Quantidade de Cancelados Acima X Abaixo da Média das horas obrigatórias */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
-              textAlign: "center",
               marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
@@ -590,18 +723,30 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph content={AlunosCanceladoAcimaeAbaixodaMediaHoras} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de Cancelados Acima X Abaixo da Média das horas
                 obrigatórias
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Para esboçar este gráfico foi considerado a média das horas
                 integralizadas de ambas as classes, tanto a classe de aluno
                 cancelado quanto a classe de aluno ativo, obtivemos a média de
@@ -614,15 +759,20 @@ export default function Presentation() {
                 <br />
                 Destacando a maior necessidade de manter o aluno no curso nos
                 períodos iniciais.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Quantidade de Ativos Acima X Abaixo da Média das horas obrigatórias */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
-              textAlign: "center",
               marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
@@ -641,18 +791,30 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph content={AlunosAtivosAcimaeAbaixodaMediaHoras} />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Quantidade de Ativos Acima X Abaixo da Média das horas
                 obrigatórias
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Para esboçar este gráfico foi considerado a média das horas
                 integralizadas de ambas as classes, tanto a classe de aluno
                 cancelado quanto a classe de aluno ativo, obtivemos a média de
@@ -661,15 +823,20 @@ export default function Presentation() {
                 Relacionando aos cancelados obtivemos um total de 77.14% alunos
                 acima dessa média, ou seja, os alunos que têm sua matrícula
                 Ativa chegam a ter um maior contato com o curso.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Media de horas obrigatorias dos cancelados */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
-              textAlign: "center",
               marginTop: 10,
               fontFamily: "inter",
               marginBottom: 10,
@@ -689,19 +856,31 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph
                 content={AlunosCanceladoAcimaeAbaixodaMediaHorasCancelados}
               />
             </Stack>
-            <div className="text">
-              <h2>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
                 Acima x Abaixo da média de horas integralizada dos cancelados
-              </h2>
-              <p>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 Neste gráfico, mostramos os alunos cancelados que estão acima da
                 média de horas integralizadas dos cancelados, sendo ela de 90
                 horas, ou seja, bem menor que a média de horas quando juntamos
@@ -712,12 +891,18 @@ export default function Presentation() {
                 <br />
                 Podemos concluir que, os alunos cancelados possuem as horas
                 zeradas ou bem próximo disso.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
         {/* Escolaridade dos cancelados */}
-        <div className="contentGraph">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               marginTop: 10,
@@ -738,15 +923,29 @@ export default function Presentation() {
           >
             <Stack
               sx={{
-                width: { xs: 330, sm: 400, md: 470, lg: 570 },
-                height: { xs: 300, sm: 350, md: 430 },
+                maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
+                height: { xs: 250, sm: 300, md: 400 },
+                width: "100%",
               }}
             >
               <PieGraph content={dataEscola} />
             </Stack>
-            <div className="text">
-              <h2>Escola pública x Escola particular</h2>
-              <p>
+            <Stack sx={{ maxWidth: 600, width: "100%" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  textAlign: "center",
+                }}
+              >
+                Escola pública x Escola particular
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  fontFamily: "inter",
+                }}
+              >
                 O gráfico ilustra a quantidade de alunos cuja matrícula foi
                 cancelada, que ingressaram no curso após vir no ensino público
                 ou particular.
@@ -757,10 +956,10 @@ export default function Presentation() {
                 <br />
                 Apontando que, os alunos que provêm do ensino público estão
                 menos preparados e tendem a cancelar suas matrículas.
-              </p>
-            </div>
+              </Typography>
+            </Stack>
           </Stack>
-        </div>
+        </Stack>
       </Container>
     </div>
   );
