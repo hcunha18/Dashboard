@@ -11,8 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { Presentation } from "../../pages";
 import { useNavigate } from "react-router-dom";
 
 const pages = [
@@ -23,6 +21,10 @@ const pages = [
   {
     key: "Apresentação",
     url: "/presentation",
+  },
+  {
+    key: "Previsão",
+    url: "/feature",
   },
 ];
 

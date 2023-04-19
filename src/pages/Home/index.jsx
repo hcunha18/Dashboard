@@ -2,7 +2,8 @@ import "./index.css";
 import Lottie from "lottie-react";
 import HomeAnimation from "../../animations/homepageanimation.json/";
 import { NavBar } from "../../components/NavBar";
-import { Container } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
+import { CardColab } from "../../components/CardColab";
 
 export default function Home() {
   return (
@@ -14,17 +15,70 @@ export default function Home() {
         <div>
           <div className="content">
             <div>
-              <h1>Quer prever a evasão da instituição?</h1>
-              <h2>Como funciona?</h2>
-              <p>
-                O site tem como intuito, através de algumas informações em PDF,
+              <Typography
+                className="h1"
+                sx={{
+                  color: "white",
+                  fontSize: "20px",
+                  lineHeight: "90%",
+                  maxWidth: "23rem",
+                  fontWeight: 600,
+                  marginTop: "4rem",
+                  fontFamily: "inter",
+                }}
+              >
+                Quer prever a evasão da instituição?
+              </Typography>
+              <Typography
+                className="h2"
+                sx={{
+                  color: "rgba(220, 220, 220, 1)",
+                  marginTop: "3rem",
+                  lineHeight: "50%",
+                  fontWeight: "400",
+                  fontSize: "clamp(16px, 1.4vw, 23px)",
+                  fontFamily: "inter",
+                }}
+              >
+                Como funciona?
+              </Typography>
+              <Typography
+                className="p"
+                sx={{
+                  color: "rgba(255, 255, 255, 0.5)",
+                  fontSize: "clamp(16px, 1.4vw, 18px);",
+                  fontWeight: 300,
+                  lineHeight: "145%",
+                  marginTop: "3rem",
+                  maxWidth: "25rem",
+                  fontFamily: "inter",
+                }}
+              >
+                O site tem como intuito, através de algumas informações,
                 encontrar padrões que possibilitam a identificação de alunos com
                 alto risco de evasão. Espera-se fornecer aos setores competentes
                 informações acerca destes alunos, para que possam ser feitas as
                 intervenções pedagógicas necessárias para a diminuição das
                 chances destes alunos deixarem a instituição.
-                <button>Saiba Mais.</button>
-              </p>
+              </Typography>
+              <Button
+                sx={{
+                  alignSelf: "flex-start",
+                  width: "200px",
+                  height: "40px",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  marginTop: "3rem",
+                  marginBottom: "3rem",
+                  background: "#4d61fc",
+                  ":hover": { background: "#99CC7F" },
+                }}
+              >
+                Saiba Mais.
+              </Button>
             </div>
             <div>
               <Lottie className="lottie" animationData={HomeAnimation} />
@@ -36,54 +90,10 @@ export default function Home() {
             <h1>Nossa Equipe</h1>
           </div>
           <div className="row">
-            <div className="column">
-              <div className="card">
-                <div className="img">
-                  <img
-                    src="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
-                    alt=""
-                  />
-                </div>
-                <h3>Gabriella</h3>
-                <p>Orientadora</p>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="img">
-                  <img
-                    src="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
-                    alt=""
-                  />
-                </div>
-                <h3>Gabriella</h3>
-                <p>Orientadora</p>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="img">
-                  <img
-                    src="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
-                    alt=""
-                  />
-                </div>
-                <h3>Gabriella</h3>
-                <p>Orientadora</p>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="img">
-                  <img
-                    src="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
-                    alt=""
-                  />
-                </div>
-                <h3>Gabriella</h3>
-                <p>Orientadora</p>
-              </div>
-            </div>
+            <CardColab />
+            <CardColab />
+            <CardColab />
+            <CardColab />
           </div>
         </div>
       </Container>
