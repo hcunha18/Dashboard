@@ -139,7 +139,7 @@ export default function Presentation() {
       <Container sx={{ marginTop: 6 }}>
         <Typography
           sx={{
-            fontFamily: "inter",
+            fontFamily: "Fira Code",
             marginBottom: 10,
             fontSize: "25px",
             lineHeight: "90%",
@@ -151,11 +151,11 @@ export default function Presentation() {
         </Typography>
         <Typography
           sx={{
-            fontFamily: "inter",
+            fontFamily: "Fira Code",
             marginBottom: 10,
             fontSize: "18px",
             lineHeight: "150%",
-            // textAlign: "center",
+            textAlign: "justify",
             fontWeight: 100,
           }}
         >
@@ -204,7 +204,7 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
@@ -230,13 +230,19 @@ export default function Presentation() {
               <BarGraph content={TotalDeSemestreAlunonoCurso} />
             </Stack>
             <Stack sx={{ maxWidth: 600, width: "100%" }}>
-              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  fontFamily: "Fira Code",
+                }}
+              >
                 Gráfico Quantidade de Semestres x Quantidade de alunos
               </Typography>
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 O gráfico ao lado mostra a quantidade de semestres que o aluno
@@ -268,7 +274,7 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
@@ -294,13 +300,19 @@ export default function Presentation() {
               <BarGraph content={CanceladoSemestreSemDisciplinas} />
             </Stack>
             <Stack sx={{ maxWidth: 600, width: "100%" }}>
-              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  fontFamily: "Fira Code",
+                }}
+              >
                 Quantidade de alunos(Y) X Quantidade de Semestres(X)
               </Typography>
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 O gráfico ao lado mostra a relação da quantidade de semestres
@@ -325,12 +337,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Motivo Trancamento
@@ -350,13 +363,19 @@ export default function Presentation() {
               <BarGraph content={data} />
             </Stack>
             <Stack sx={{ maxWidth: 600, width: "100%" }}>
-              <Typography sx={{ marginBottom: "1.6rem", fontSize: "18px" }}>
+              <Typography
+                sx={{
+                  marginBottom: "1.6rem",
+                  fontSize: "18px",
+                  fontFamily: "Fira Code",
+                }}
+              >
                 Quantidade de alunos(Y) X Motivo de trancamento(X)
               </Typography>
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Com este gráfico é possível relatar todos os motivos de
@@ -396,12 +415,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Cancelado x Quantidade de reprovação por nota
@@ -426,6 +446,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de alunos cancelados(Y) X Quantidade de reprovação
@@ -434,7 +455,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Com o gráfico ao lado conseguimos ilustrar que o maior número de
@@ -457,12 +478,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Cancelado x Quantidade de reprovação por falta
@@ -487,6 +509,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de alunos cancelados(Y) X Quantidade de reprovação
@@ -495,7 +518,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Neste gráfico ocorre a mesma situação do gráfico anterior, ou
@@ -516,12 +539,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Cancelado x Quantidade de Aprovação
@@ -546,6 +570,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de alunos cancelados(Y) X Quantidade Aprovação(X)
@@ -553,7 +578,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 O gráfico ao lado ilustra a quantidade de aprovação entre os
@@ -579,12 +604,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Relação Ativo Cancelado Masculino
@@ -609,6 +635,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de alunos Ativos X Quantidade de alunos Cancelados do
@@ -617,7 +644,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 No gráfico ao lado, exibimos a relação quantitativa de alunos
@@ -643,12 +670,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Relação Ativo Cancelado Feminino
@@ -673,6 +701,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de alunos Ativos X Quantidade de alunos Cancelados do
@@ -681,7 +710,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 No gráfico ao lado, exibimos a relação quantitativa de alunos
@@ -706,12 +735,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Cancelados Acima e Abaixo da Media Global de Horas Obrigatorias
@@ -736,6 +766,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de Cancelados Acima X Abaixo da Média das horas
@@ -744,7 +775,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Para esboçar este gráfico foi considerado a média das horas
@@ -774,12 +805,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Ativos Acima e Abaixo da Media Global de Horas Obrigatorias
@@ -804,6 +836,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Quantidade de Ativos Acima X Abaixo da Média das horas
@@ -812,7 +845,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Para esboçar este gráfico foi considerado a média das horas
@@ -838,12 +871,13 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
               maxWidth: "23rem",
               fontWeight: 500,
+              textAlign: "center",
             }}
           >
             Cancelados Acima e Abaixo da Média de Horas Obrigatorias dos
@@ -871,6 +905,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Acima x Abaixo da média de horas integralizada dos cancelados
@@ -878,7 +913,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Neste gráfico, mostramos os alunos cancelados que estão acima da
@@ -906,7 +941,8 @@ export default function Presentation() {
           <Typography
             sx={{
               marginTop: 10,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
+              textAlign: "center",
               marginBottom: 10,
               fontSize: "25px",
               lineHeight: "90%",
@@ -936,6 +972,7 @@ export default function Presentation() {
                   marginBottom: "1.6rem",
                   fontSize: "18px",
                   textAlign: "center",
+                  fontFamily: "Fira Code",
                 }}
               >
                 Escola pública x Escola particular
@@ -943,7 +980,7 @@ export default function Presentation() {
               <Typography
                 sx={{
                   fontSize: "15px",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
                 }}
               >
                 O gráfico ilustra a quantidade de alunos cuja matrícula foi

@@ -26,6 +26,10 @@ const pages = [
     key: "Previsão",
     url: "/feature",
   },
+  {
+    key: "Login",
+    url: "/Login",
+  },
 ];
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -61,7 +65,7 @@ export function NavBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               fontWeight: 700,
               letterSpacing: ".1rem",
               color: "inherit",
@@ -101,11 +105,11 @@ export function NavBar() {
               }}
             >
               {/* aqui fica os menus */}
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((pages) => (
+                <MenuItem key={pages.key} onClick={() => navigation(pages.url)}>
+                  <Typography textAlign="center">{pages.key}</Typography>
                 </MenuItem>
-              ))} */}
+              ))}
             </Menu>
           </Box>
 
@@ -118,7 +122,7 @@ export function NavBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "inter",
+              fontFamily: "Fira Code",
               fontWeight: 700,
               letterSpacing: ".1rem",
               color: "inherit",
@@ -143,6 +147,7 @@ export function NavBar() {
                   my: 2,
                   color: "white",
                   display: "block",
+                  fontFamily: "Fira Code",
                 }}
               >
                 {page.key}

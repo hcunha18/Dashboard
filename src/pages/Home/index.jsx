@@ -2,7 +2,7 @@ import "./index.css";
 import Lottie from "lottie-react";
 import HomeAnimation from "../../animations/homepageanimation.json/";
 import { NavBar } from "../../components/NavBar";
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography, Button, Stack } from "@mui/material";
 import { CardColab } from "../../components/CardColab";
 
 export default function Home() {
@@ -20,11 +20,12 @@ export default function Home() {
                 sx={{
                   color: "white",
                   fontSize: "20px",
-                  lineHeight: "90%",
+                  lineHeight: "150%",
                   maxWidth: "23rem",
-                  fontWeight: 600,
+                  fontWeight: 400,
                   marginTop: "4rem",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
+                  textTransform: "uppercase",
                 }}
               >
                 Quer prever a evasão da instituição?
@@ -37,30 +38,34 @@ export default function Home() {
                   lineHeight: "50%",
                   fontWeight: "400",
                   fontSize: "clamp(16px, 1.4vw, 23px)",
-                  fontFamily: "inter",
+                  fontFamily: "Fira Code",
+                  textTransform: "uppercase",
                 }}
               >
                 Como funciona?
               </Typography>
-              <Typography
-                className="p"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.5)",
-                  fontSize: "clamp(16px, 1.4vw, 18px);",
-                  fontWeight: 300,
-                  lineHeight: "145%",
-                  marginTop: "3rem",
-                  maxWidth: "25rem",
-                  fontFamily: "inter",
-                }}
-              >
-                O site tem como intuito, através de algumas informações,
-                encontrar padrões que possibilitam a identificação de alunos com
-                alto risco de evasão. Espera-se fornecer aos setores competentes
-                informações acerca destes alunos, para que possam ser feitas as
-                intervenções pedagógicas necessárias para a diminuição das
-                chances destes alunos deixarem a instituição.
-              </Typography>
+              <Stack>
+                <Typography
+                  className="p"
+                  sx={{
+                    color: "rgba(255, 255, 255, 0.5)",
+                    fontSize: "clamp(16px, 1.4vw, 18px);",
+                    fontWeight: 300,
+                    lineHeight: "145%",
+                    marginTop: "3rem",
+                    maxWidth: "25rem",
+                    fontFamily: "Fira Code",
+                    textAling: "justify",
+                  }}
+                >
+                  O site tem como intuito, através de algumas informações,
+                  encontrar padrões que possibilitam a identificação de alunos
+                  com alto risco de evasão. Espera-se fornecer aos setores
+                  competentes informações acerca destes alunos, para que possam
+                  ser feitas as intervenções pedagógicas necessárias para a
+                  diminuição das chances destes alunos deixarem a instituição.
+                </Typography>
+              </Stack>
               <Button
                 sx={{
                   alignSelf: "flex-start",
@@ -75,9 +80,10 @@ export default function Home() {
                   marginBottom: "3rem",
                   background: "#4d61fc",
                   ":hover": { background: "#99CC7F" },
+                  fontFamily: "Fira Code",
                 }}
               >
-                Saiba Mais.
+                Saiba Mais
               </Button>
             </div>
             <div>
