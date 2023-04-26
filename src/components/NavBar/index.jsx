@@ -32,8 +32,6 @@ const pages = [
   },
 ];
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 export function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

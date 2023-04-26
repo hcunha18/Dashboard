@@ -7,8 +7,37 @@ import {
   Button,
 } from "@mui/material";
 import { NavBar } from "../../components/NavBar";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { auth } from "../../server/firebase.js";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const navigation = useNavigate();
+  function handleSingIn() {
+    signInWithEmailAndPassword(auth, user, password)
+      .then((userCredential) => {
+        const usuario = userCredential.user;
+        {
+          usuario ? () => navigation("/Feature") : console.log("erro");
+        }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    setUser("");
+    setPassword("");
+  }
+
+  function handleTextFieldPassword() {
+    setPassword(event.target.value);
+  }
+  function handleTextFieldUser() {
+    setUser(event.target.value);
+  }
   return (
     <Stack sx={{ minHeight: "100vh", background: "#27292f" }}>
       <NavBar />
@@ -25,7 +54,7 @@ export default function Login() {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-
+            boxShadow: 2,
             borderRadius: 5,
           }}
         >
@@ -52,6 +81,8 @@ export default function Login() {
               fontFamily: "Fira Code",
               color: "white",
             }}
+            onChange={handleTextFieldUser}
+            value={user}
           />
           <Typography sx={{ marginTop: "2rem", fontFamily: "Fira Code" }}>
             {" "}
@@ -63,17 +94,21 @@ export default function Login() {
             variant="outlined"
             fontFamily="Fira Code"
             sx={{}}
+            onChange={handleTextFieldPassword}
+            value={password}
           />
           <Button
             sx={{
               marginTop: "2rem",
               marginBottom: "2rem",
               background: "blue",
-              color: "white",
-              fontWeight: 500,
+              color: "black",
+              fontWeight: 700,
               borderRadius: 2,
-              ":houver": { backgroundColor: "#8bbfff" },
+              boxShadow: 2,
+              width: "10rem",
             }}
+            onClick={handleSingIn}
           >
             Entrar
           </Button>

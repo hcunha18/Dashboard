@@ -18,6 +18,7 @@ export function CardColab() {
         maxWidth: 206.8,
         maxHeight: 400,
         marginRight: "2rem",
+        marginTop: "1rem",
       }}
     >
       <CardActionArea>

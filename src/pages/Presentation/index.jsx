@@ -623,7 +623,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
@@ -689,7 +689,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
@@ -754,7 +754,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
@@ -824,7 +824,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
@@ -891,7 +891,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
@@ -960,7 +960,7 @@ export default function Presentation() {
             <Stack
               sx={{
                 maxWidth: { xs: 330, sm: 400, md: 470, lg: 1000 },
-                height: { xs: 250, sm: 300, md: 400 },
+                height: { xs: 350, sm: 300, md: 400 },
                 width: "100%",
               }}
             >
