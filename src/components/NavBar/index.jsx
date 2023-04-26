@@ -23,10 +23,6 @@ const pages = [
     url: "/presentation",
   },
   {
-    key: "Previsão",
-    url: "/feature",
-  },
-  {
     key: "Login",
     url: "/Login",
   },

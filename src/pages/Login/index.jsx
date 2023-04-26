@@ -16,20 +16,38 @@ export default function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigate();
+
+  // function handleSingIn() {
+  //   signInWithEmailAndPassword(user, password)
+  //     .then((userCredential) => {
+  //       const usuario = userCredential.user;
+  //       if (usuario) {
+  //         console.log("Erro ao autenticar usuário");
+  //       } else {
+  //         navigation.navigate("Feature"); // Navega para a tela "Feature"
+  //       }
+  //       console.log("arlindo");
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       console.log(
+  //         `Erro ao autenticar usuário: ${errorCode} - ${errorMessage}`
+  //       );
+  //     });
+  //   setUser("");
+  //   setPassword("");
+  // }
   function handleSingIn() {
     signInWithEmailAndPassword(auth, user, password)
       .then((userCredential) => {
         const usuario = userCredential.user;
-        {
-          usuario ? () => navigation("/Feature") : console.log("erro");
-        }
+        return usuario;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-    setUser("");
-    setPassword("");
   }
 
   function handleTextFieldPassword() {
@@ -108,7 +126,9 @@ export default function Login() {
               boxShadow: 2,
               width: "10rem",
             }}
-            onClick={handleSingIn}
+            onClick={
+              handleSingIn ? () => navigation("/feature") : console.log("erro")
+            }
           >
             Entrar
           </Button>
