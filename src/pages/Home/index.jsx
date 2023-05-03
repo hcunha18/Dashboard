@@ -2,6 +2,7 @@ import "./index.css";
 import Lottie from "lottie-react";
 import HomeAnimation from "../../animations/homepageanimation.json/";
 import { NavBar } from "../../components/NavBar";
+import { Footer } from "../../components/Footer";
 import { Container, Typography, Button, Stack } from "@mui/material";
 import { CardColab } from "../../components/CardColab";
 
@@ -103,6 +104,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 }

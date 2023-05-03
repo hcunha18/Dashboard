@@ -7,91 +7,103 @@ import {
   Typography,
 } from "@mui/material";
 import { NavBar } from "../../components/NavBar";
+import "./index.css";
 
 export default function Feature() {
   return (
     <Stack sx={{ minHeight: "100vh", background: "#27292f" }}>
       <NavBar />
-      <Container
+      <Stack
         sx={{
+          backgroundImage:
+            "url(https://th.bing.com/th/id/OIP.I5baqsWGBDlScotZyh3z8gHaE7?pid=ImgDet&rs=1)",
+          height: "100vh",
+          width: "75vh",
           display: "flex",
-          flexDirection: "column",
-          width: "100%",
           alignItems: "center",
         }}
       >
         <Typography
           sx={{
-            textAlign: "center",
             color: "white",
-            fontSize: "22px",
-            marginTop: "2rem",
-            maxWidth: "32rem",
+            fontFamily: "Fira Code",
+            fontWeight: 800,
+            marginTop: "3rem",
           }}
         >
-          Com o objetivo de intervir antes da evasão do aluno do curso foi
-          criado o modelo a seguir
+          Adicione os dados para realizar a previsão
         </Typography>
-        <Typography
-          sx={{ fontStyle: "italic", color: "white", marginTop: "2rem" }}
-        >
-          Atenção: O modelo criado pode não condizer com a realidade
-        </Typography>
-        <Avatar
-          src="/broken-image.jpg"
-          sx={{ margin: "3rem", width: "7rem", height: "7rem" }}
-        />
-        <Typography sx={{ color: "white", marginTop: "1rem" }}>
-          Horas Obrigatorias Integralizadas:
-        </Typography>
-        <TextField
-          label="Ex:1540"
-          variant="filled"
-          sx={{
-            color: "white",
-            marginTop: "0.25rem",
-            background: "white",
-            borderRadius: 2,
-            width: "25rem",
-          }}
-        />
-        <Typography sx={{ color: "white", marginTop: "1rem" }}>!!!:</Typography>
-        <TextField
-          label="***"
-          variant="filled"
-          sx={{
-            color: "white",
-            marginTop: "0.25rem",
-            background: "white",
-            borderRadius: 2,
-            width: "25rem",
-          }}
-        />
-        <Typography sx={{ color: "white", marginTop: "1rem" }}>!!!:</Typography>
-        <TextField
-          label="***"
-          variant="filled"
-          sx={{
-            color: "white",
-            marginTop: "0.25rem",
-            background: "white",
-            borderRadius: 2,
-            width: "25rem",
-          }}
-        />
 
+        <Stack>
+          <Typography
+            sx={{
+              marginTop: "2rem",
+              textAlign: "start",
+              color: "white",
+              fontWeight: 500,
+              fontFamily: "Fira Code",
+            }}
+          >
+            Informação:
+          </Typography>
+          <TextField
+            label="Digite..."
+            id="outlined-size-small"
+            // defaultValue=""
+            size="small"
+            variant="filled"
+            sx={{ background: "white", borderRadius: 2 }}
+          />
+        </Stack>
+        <Stack>
+          <Typography
+            sx={{
+              marginTop: "2rem",
+              textAlign: "start",
+              color: "white",
+              fontWeight: 500,
+              fontFamily: "Fira Code",
+            }}
+          >
+            Informação:
+          </Typography>
+          <TextField
+            label="Digite..."
+            id="outlined-size-small"
+            // defaultValue=""
+            size="small"
+            variant="filled"
+            sx={{ background: "white", borderRadius: 2 }}
+          />
+        </Stack>
+        <Stack>
+          <Typography
+            sx={{
+              marginTop: "2rem",
+              textAlign: "start",
+              color: "white",
+              fontWeight: 500,
+              fontFamily: "Fira Code",
+            }}
+          >
+            Informação:
+          </Typography>
+          <TextField
+            label="Digite..."
+            id="outlined-size-small"
+            // defaultValue=""
+            size="small"
+            variant="filled"
+            sx={{ background: "white", borderRadius: 2 }}
+          />
+        </Stack>
         <Button
-          variant="contained"
-          sx={{
-            marginTop: "2rem",
-            width: "10rem",
-            height: "3rem",
-            borderRadius: 5,
-          }}
+          variant="outlined"
+          sx={{ marginTop: "1.5rem", color: "white", fontFamily: "Fira Code" }}
         >
-          Subimit
+          Submit
         </Button>
-      </Container>
+      </Stack>
     </Stack>
   );
 }
