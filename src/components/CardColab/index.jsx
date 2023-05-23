@@ -4,7 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Stack } from "@mui/material";
 
-export function CardColab() {
+export function CardColab(props) {
   return (
     <Card
       sx={{
@@ -36,19 +36,19 @@ export function CardColab() {
             sx={{ width: "100%", borderRadius: "50%", height: "100%" }}
             component="img"
             height="140"
-            src="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
+            src={props.image}
             // image="/static/images/cards/contemplative-reptile.jpg"
             alt="green iguana"
           />
         </Stack>
-        <CardContent>
+        <CardContent sx={{ minWidth: "10rem", maxWidth: "10rem" }}>
           <Typography
             gutterBottom
             variant="h5"
             component="div"
             sx={{ fontFamily: "inter" }}
           >
-            Gabriella
+            {props.name}
           </Typography>
           <Typography
             variant="body2"
@@ -62,7 +62,7 @@ export function CardColab() {
               fontFamily: "inter",
             }}
           >
-            ORIENTADORA
+            {props.cargo}
           </Typography>
         </CardContent>
       </CardActionArea>

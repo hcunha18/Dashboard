@@ -97,10 +97,21 @@ export default function Home() {
             <h1>Nossa Equipe</h1>
           </div>
           <div className="row">
-            <CardColab />
-            <CardColab />
-            <CardColab />
-            <CardColab />
+            <CardColab
+              image="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
+              cargo="ORIENTADORA"
+              name="Gabriella"
+            />
+            <CardColab
+              image="https://sig-arquivos.cefetmg.br//arquivos/2021031174140733306276c0288029669/foto.jpg"
+              name="Rafaela"
+              cargo="ALUNA"
+            />
+            <CardColab
+              image="https://media.licdn.com/dms/image/D4D35AQHo13DriSpq3A/profile-framedphoto-shrink_400_400/0/1670672456171?e=1685368800&v=beta&t=7A_id3Q04l_e4yWGsO8SzFIsyxGAYV7N6LGhqHmdXVg"
+              name="Humberto"
+              cargo="ALUNO"
+            />
           </div>
         </div>
       </Container>
