@@ -203,7 +203,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -293,7 +293,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -375,7 +375,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -471,7 +471,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -553,7 +553,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -632,7 +632,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -716,7 +716,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -800,7 +800,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -883,7 +883,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -971,7 +971,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -1055,7 +1055,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -1146,7 +1146,7 @@ export default function Presentation() {
           TransitionProps={{ unmountOnExit: true }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
