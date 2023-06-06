@@ -14,8 +14,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { NavBar } from "../../components/NavBar";
 import "./index.css";
 import { api } from "../../utils/api";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { alignProperty } from "@mui/material/styles/cssUtils";
+import { AuthContext } from "../../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Feature() {
   async function handleSubmit() {
@@ -67,6 +69,12 @@ export default function Feature() {
   function handleNewTotalHFR(event) {
     settotalHFR(event.target.value);
   }
+  const { user } = useContext(AuthContext);
+  const navigation = useNavigate();
+  useEffect(() => {
+    if (!user) return navigation("/Login");
+  }, []);
+
   return (
     <Stack sx={{ minHeight: "100vh", background: "#27292f" }}>
       <NavBar />

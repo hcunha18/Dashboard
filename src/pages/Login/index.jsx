@@ -9,9 +9,7 @@ import {
   FormControl,
 } from "@mui/material";
 import { NavBar } from "../../components/NavBar";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { auth } from "../../server/firebase.js";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -20,61 +18,32 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Alert from "@mui/material/Alert";
+import { AuthContext } from "../../context/authContext";
 export default function Login() {
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const { user, login } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (user) return navigation("/feature");
+  }, []);
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  // function handleSingIn() {
-  //   signInWithEmailAndPassword(user, password)
-  //     .then((userCredential) => {
-  //       const usuario = userCredential.user;
-  //       if (usuario) {
-  //         console.log("Erro ao autenticar usuário");
-  //       } else {
-  //         navigation.navigate("Feature"); // Navega para a tela "Feature"
-  //       }
-  //       console.log("arlindo");
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       console.log(
-  //         `Erro ao autenticar usuário: ${errorCode} - ${errorMessage}`
-  //       );
-  //     });
-  //   setUser("");
-  //   setPassword("");
-  // }
-  function handleSingIn() {
+  async function handleSingIn() {
     console.log("handleSignIn");
-    signInWithEmailAndPassword(auth, user, password)
-      .then((userCredential) => {
-        console.log("passou");
-        console.log(userCredential);
-        setUser("");
-        setPassword("");
-        return navigation("/feature");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log("erro", errorMessage, errorCode);
-        if (errorCode == "auth/wrong-password") {
-          return alert("Senha inválida");
-        }
-        if (errorCode == "auth/invalid-email") {
-          return alert("E-mail inválido");
-        }
-        return alert("Falha ao logar");
-      });
+    const sucess = await login(email, password);
+    if (sucess) {
+      navigation("/feature");
+      setEmail("");
+      setPassword("");
+    } else alert("ERROOOOOU");
   }
-
   const [dados, setDados] = useState();
   function saveArquivoNaApiDoHumbertim() {
     const url = "http://localhost:9090/"; // API emulada do python, link pra ela
@@ -102,7 +71,7 @@ export default function Login() {
     setPassword(event.target.value);
   }
   function handleTextFieldUser(event) {
-    setUser(event.target.value);
+    setEmail(event.target.value);
   }
   return (
     <Stack sx={{ minHeight: "100vh", background: "#27292f" }}>
@@ -152,10 +121,10 @@ export default function Login() {
             }}
             variant="filled"
             onChange={handleTextFieldUser}
-            value={user}
+            value={email}
           >
             <InputLabel
-              htmlFor="user"
+              htmlFor="email"
               sx={{
                 color: "rgba(255, 255, 255, 0.5)",
                 fontFamily: "Fira Code",
@@ -164,7 +133,7 @@ export default function Login() {
               exe@email.com
             </InputLabel>
             <OutlinedInput
-              id="user"
+              id="email"
               type="email"
               endAdornment={
                 <InputAdornment position="end" sx={{}}></InputAdornment>
