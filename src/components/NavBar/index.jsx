@@ -7,9 +7,7 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +17,8 @@ const pages = [
     url: "/",
   },
   {
-    key: "Apresentação",
-    url: "/presentation",
+    key: "Equipe",
+    url: "/#equipe",
   },
   {
     key: "Login",
@@ -48,27 +46,9 @@ export function NavBar() {
   };
   const navigation = useNavigate();
   return (
-    <AppBar position="static" sx={{ background: "transparent" }}>
+    <AppBar position="static" sx={{ background: "transparent", boxShadow: "inherit", paddingTop: "1.8rem"}}>
       <Container>
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component=""
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Fira Code",
-              fontWeight: 700,
-              letterSpacing: ".1rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            CEFET
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -106,30 +86,11 @@ export function NavBar() {
               ))}
             </Menu>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "Fira Code",
-              fontWeight: 700,
-              letterSpacing: ".1rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            CEFET
-          </Typography>
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
+              justifyContent: "center",
               alignItems: "center",
             }}
           >
@@ -139,9 +100,12 @@ export function NavBar() {
                 onClick={() => navigation(page.url)}
                 sx={{
                   my: 2,
-                  color: "white",
+                  color: "black",
                   display: "block",
                   fontFamily: "Fira Code",
+                  fontSize: '1.1rem',
+                  fontWeight: 'bold',
+                  marginRight: '1rem'
                 }}
               >
                 {page.key}

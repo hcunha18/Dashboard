@@ -1,0 +1,23 @@
+.form {
+    font-family: 'Fira Code';
+    font-size: 15px;
+}
+
+.form input {
+    margin-top: 1.5rem;
+    text-decoration: none;
+    height: 2rem;
+    width: 14rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #4169e1;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.form input:focus {
+    outline: 0;
+}
+

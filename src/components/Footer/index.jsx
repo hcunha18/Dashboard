@@ -1,16 +1,16 @@
-import { Stack, Container, Typography } from "@mui/material";
+import { Stack, Container, Typography, Divider } from "@mui/material";
 
 export function Footer() {
   return (
     <Stack
       sx={{
-        background: "#414253",
         height: "10rem",
         width: "100%",
-        marginTop: "10rem",
-        boxShadow: 1000,
+        marginTop: "1rem",
+        boxShadow: 1,
       }}
     >
+      <Divider color = '#4d61fc'  variant='middle' sx={{marginBottom: '1rem'}}/>
       <Container
         sx={{
           display: "flex",
