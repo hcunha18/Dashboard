@@ -35,7 +35,7 @@ export function NewHome(){
               <NewCardColab image="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
               cargo="ORIENTADORA"
               name="Gabriella"/>
-              <NewCardColab image="./luis.png"
+              <NewCardColab image="https://kerokolaborar.projetoscomputacao.com.br/img/Team/7.jpg"
               cargo="COORIENTADOR"
               name="Luis"/>
               <NewCardColab image="https://sig-arquivos.cefetmg.br//arquivos/202011621566dc29025519396e58332c9/Foto_Fundo.png"
