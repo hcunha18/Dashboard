@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import Background_video from '../../assets/video_home_page_ic.mp4'
+import luisPhoto from '../../assets/luis.png'
 import { NewNavBar } from '../../components/NewNavBar';
 import "./index.css";
 import { NewCardColab } from '../../components/NewCardColab';
@@ -7,8 +8,10 @@ import { Footer } from '../../components/Footer';
 import styled, { keyframes } from 'styled-components';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useScroll } from '../../hooks/useScroll';
 
 export function NewHome(){
+    const {scrollToSection} = useScroll();
     return <div>
             <div className='top_content'>
                 <NewNavBar className='navbar'/>
@@ -35,7 +38,7 @@ export function NewHome(){
               <NewCardColab image="https://sig-arquivos.cefetmg.br//arquivos/20210421204c6032566250aa79cdc877a/Foto.gif"
               cargo="ORIENTADORA"
               name="Gabriella"/>
-              <NewCardColab image="https://kerokolaborar.projetoscomputacao.com.br/img/Team/7.jpg"
+              <NewCardColab image= {luisPhoto}
               cargo="COORIENTADOR"
               name="Luis"/>
               <NewCardColab image="https://sig-arquivos.cefetmg.br//arquivos/202011621566dc29025519396e58332c9/Foto_Fundo.png"

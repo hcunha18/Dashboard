@@ -9,7 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useScroll } from "../../hooks/useScroll";
 
 const pages = [
   {
@@ -45,6 +46,7 @@ export function NewNavBar() {
     setAnchorElUser(null);
   };
   const navigation = useNavigate();
+  const {scrollToSection} = useScroll();
   return (
     <AppBar position="static" sx={{ background: "transparent", boxShadow: "inherit", paddingTop: "1.8rem"}}>
       <Container>
@@ -95,9 +97,13 @@ export function NewNavBar() {
             }}
           >
             {pages.map((page) => (
+              // <Link to={page.url}>{page.key}</Link>
               <Button
                 key={page.key}
-                onClick={() => navigation(page.url)}
+                onClick={() => {
+                  navigation(page.url)
+                  scrollToSection(page.url)
+                }}
                 sx={{
                   my: 2,
                   color: "white",
